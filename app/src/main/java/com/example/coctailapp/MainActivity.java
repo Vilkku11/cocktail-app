@@ -1,5 +1,6 @@
 package com.example.coctailapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -19,9 +20,9 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String randomCocktailUrl = "https::";
+    private String randomCocktailUrl = "***REMOVED***";
     private RequestQueue mQueue;
-    private String data = "";
+    private String data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,10 +58,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         Intent intent = new Intent(this, ShowCocktailActivity.class);
-        intent.putExtra("data", "data");
+        intent.putExtra("DATA", data);
         startActivity(intent);
+
     }
-    private void convertJson(JSONObject response) throws JSONException {
+    private void convertJson( JSONObject response) throws JSONException {
         data = response.toString();
     }
 
