@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String randomCocktailUrl = "***REMOVED***";
     private RequestQueue mQueue;
-    private String data;
+    protected String data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,19 +31,38 @@ public class MainActivity extends AppCompatActivity {
         mQueue = Volley.newRequestQueue(this);
     }
 
-    // change to ShowCocktail activity
-    public void changeIntentRndButton(View view) {
+
+    // Change to ShowCocktailActivity
+   /* public void changeIntent(View view){
+
+
+
+        Intent intent = new Intent(this, ShowCocktailActivity.class);
+        intent.putExtra("DATA", data);
+        startActivity(intent);
+    }*/
+
+
+
+
+
+
+
+
+
+    // Fetch JSON data from api
+    public void changeIntent(View view) {
 
 
         // fetch random cocktail
-        JsonObjectRequest jsonObjectRequest  = new JsonObjectRequest
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, randomCocktailUrl, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
 
-                        try{
+                        try {
                             convertJson(response);
-                        } catch (JSONException e ){
+                        } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
@@ -54,19 +73,32 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-            mQueue.add(jsonObjectRequest);
+        mQueue.add(jsonObjectRequest);
 
+
+
+
+    }
+
+    private void convertJson(@NonNull JSONObject cocktail) throws JSONException {
+
+        data = cocktail.toString();
 
         Intent intent = new Intent(this, ShowCocktailActivity.class);
         intent.putExtra("DATA", data);
         startActivity(intent);
 
     }
-    private void convertJson( JSONObject response) throws JSONException {
-        data = response.toString();
-    }
+
+
 
 }
+
+
+
+
+
+
 
 
 

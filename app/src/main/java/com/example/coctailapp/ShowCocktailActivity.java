@@ -7,17 +7,18 @@ import android.content.Intent;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class ShowCocktailActivity extends AppCompatActivity {
 
     // Data passed from MainActivity
-    String data;
+    protected String dataa;
     // data back to JSON object
-    JSONObject cocktail = null;
-
-
+    JSONObject cocktail;
+    JSONArray cocktailArray;
+    String drink;
 
 
 
@@ -30,16 +31,27 @@ public class ShowCocktailActivity extends AppCompatActivity {
 
 
         if (getIntent().getStringExtra("DATA") != null) {
-            data = getIntent().getStringExtra("DATA");
+            dataa = getIntent().getStringExtra("DATA");
             System.out.println("data not null");
-            System.out.println(data);
+
 
             try {
-                cocktail = new JSONObject(data);
+                cocktail = new JSONObject(dataa);
+                cocktailArray = cocktail.getJSONArray("drinks");
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
+
+            for (int i=0; i < cocktailArray.length();i++ ){
+                try {
+                    JSONObject oneObject = cocktailArray.getJSONObject(i);
+                    drink = oneObject.getString("strDrink");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
 
         } else {
             System.out.println("data is null");
@@ -48,16 +60,7 @@ public class ShowCocktailActivity extends AppCompatActivity {
 
         TextView testView = (TextView) findViewById(R.id.textView2);
 
-        if(cocktail != null) {
-            try {
-
-                String name = cocktail.getJSONObject("drinks").getString("strDrink");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }else{
-            System.out.println("cocktail is nulll");
-        }
+       testView.setText(drink);
 
 
     }
