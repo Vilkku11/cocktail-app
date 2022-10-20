@@ -15,12 +15,18 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
+import java.util.Properties;
+import java.util.ResourceBundle;
+
+
 public class MainActivity extends AppCompatActivity {
 
-    private String randomCocktailUrl = "";
+    private String randomCocktailUrl = Bundle.EMPTY.getString("com.android.cocktail.url");
     private RequestQueue mQueue;
     private String data;
 
