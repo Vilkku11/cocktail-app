@@ -20,9 +20,9 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String randomCocktailUrl = "***REMOVED***";
+    private String randomCocktailUrl = "";
     private RequestQueue mQueue;
-    protected String data;
+    private String data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

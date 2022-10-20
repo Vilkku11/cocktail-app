@@ -14,11 +14,11 @@ import org.json.JSONObject;
 public class ShowCocktailActivity extends AppCompatActivity {
 
     // Data passed from MainActivity
-    protected String dataa;
+    private String dataa;
     // data back to JSON object
-    JSONObject cocktail;
-    JSONArray cocktailArray;
-    String drink;
+    private JSONObject cocktail;
+    private JSONArray cocktailArray;
+    private String drink;
 
 
 
