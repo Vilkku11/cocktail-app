@@ -34,7 +34,7 @@
                 android:name="android.app.lib_name"
                 android:value=" " />
             <meta-data
-                android:name="com.android.cocktail.url"
+                android:name="cocktailUrl"
                 android:value="${RANDOM_COCKTAIL_URL}" />
         </activity>
     </application>

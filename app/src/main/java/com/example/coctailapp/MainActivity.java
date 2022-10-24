@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -26,7 +28,7 @@ import java.util.ResourceBundle;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String randomCocktailUrl = Bundle.EMPTY.getString("com.android.cocktail.url");
+    private String randomCocktailUrl = BuildConfig.RANDOM_COCKTAIL_URL;
     private RequestQueue mQueue;
     private String data;
 
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mQueue = Volley.newRequestQueue(this);
+
     }
 
 
