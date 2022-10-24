@@ -7,21 +7,25 @@
     tools:context=".ShowCocktailActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="142dp"
-        android:layout_height="85dp"
-        android:text="ShowCocktailActivity"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="78dp" />
+        android:id="@+id/cocktailNameTextView"
+        android:layout_width="281dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="32dp"
+        android:text="test"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/cocktailInstructionsTextView"
         android:layout_width="130dp"
         android:layout_height="80dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="140dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/cocktailNameTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
