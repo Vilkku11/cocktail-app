@@ -23,12 +23,7 @@ import java.net.URL;
 
 public class ShowCocktailActivity extends AppCompatActivity {
 
-    // Data passed from MainActivity
-    private String dataa;
-    // data back to JSON object
-    private JSONObject cocktail;
-    // JSON object to JSONArray
-    private JSONArray cocktailArray;
+
 
     private String drinkName;
     private String drinkGlass;
@@ -42,15 +37,42 @@ public class ShowCocktailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_cocktail);
 
-        // fetching data from MainActivity
-        // if successful, get JSONArray and extract data to be shown on screen
+        // Fetch data from MainActivity and parse it to needed variables
+        fetchAndParseData();
 
+
+        // Draw everything on screen
+
+        // fetch views
+        TextView cocktailName = (TextView) findViewById(R.id.cocktailNameTextView);
+        TextView cocktailInstructions = (TextView) findViewById(R.id.cocktailInstructionsTextView);
+        cocktailView = (ImageView) findViewById(R.id.cocktailPhotoImageView);
+
+
+        // Fetch photo and set it to cocktailView
+
+        fetchPhoto();
+
+        // Set texts
+        cocktailName.setText(drinkName);
+        cocktailInstructions.setText(drinkInstructions);
+
+
+
+    }
+
+    private void fetchAndParseData() {
+
+        JSONArray cocktailArray = null;
+
+        // Fetch data from Main Activity, convert it back to JSON object, to JSON array and extract data to variables
         if (getIntent().getStringExtra("DATA") != null) {
-            dataa = getIntent().getStringExtra("DATA");
+             String dataa = getIntent().getStringExtra("DATA");
             System.out.println("data not null");
 
+
             try {
-                cocktail = new JSONObject(dataa);
+               JSONObject cocktail = new JSONObject(dataa);
                 cocktailArray = cocktail.getJSONArray("drinks");
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -73,29 +95,6 @@ public class ShowCocktailActivity extends AppCompatActivity {
         } else {
             System.out.println("data is null");
         }
-
-
-
-
-
-        // Draw everything on screen
-
-        // fetch views
-        TextView cocktailName = (TextView) findViewById(R.id.cocktailNameTextView);
-        TextView cocktailInstructions = (TextView) findViewById(R.id.cocktailInstructionsTextView);
-        cocktailView = (ImageView) findViewById(R.id.cocktailPhotoImageView);
-
-
-        // Fetch photo and set it to cocktailView
-
-        fetchPhoto();
-
-
-
-        cocktailName.setText(drinkName);
-        cocktailInstructions.setText(drinkInstructions);
-
-
 
     }
 
