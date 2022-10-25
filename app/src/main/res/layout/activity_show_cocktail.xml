@@ -20,12 +20,26 @@
 
     <TextView
         android:id="@+id/cocktailInstructionsTextView"
-        android:layout_width="130dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="140dp"
+        android:layout_width="204dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="80dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cocktailNameTextView" />
+
+    <ImageView
+        android:id="@+id/cocktailPhotoImageView"
+        android:layout_width="171dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="4dp"
+        android:background="#FFFFFF"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cocktailInstructionsTextView"
+        tools:srcCompat="@mipmap/ic_launcher" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
