@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
@@ -46,6 +47,7 @@ public class ShowCocktailActivity extends AppCompatActivity {
         // fetch views
         TextView cocktailName = (TextView) findViewById(R.id.cocktailNameTextView);
         TextView cocktailInstructions = (TextView) findViewById(R.id.cocktailInstructionsTextView);
+
         cocktailView = (ImageView) findViewById(R.id.cocktailPhotoImageView);
 
 
