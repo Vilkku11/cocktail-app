@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), "Error!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Could not connect :(", Toast.LENGTH_LONG).show();
                     }
                 });
 

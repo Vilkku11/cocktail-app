@@ -8,10 +8,11 @@
 
     <TextView
         android:id="@+id/CocktailAppTextView"
-        android:layout_width="155dp"
-        android:layout_height="48dp"
+        android:layout_width="354dp"
+        android:layout_height="46dp"
         android:layout_marginTop="56dp"
         android:text="@string/cocktail_app"
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

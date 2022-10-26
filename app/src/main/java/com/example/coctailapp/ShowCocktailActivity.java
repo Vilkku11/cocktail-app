@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -135,8 +136,7 @@ public class ShowCocktailActivity extends AppCompatActivity {
             System.out.println("data is null");
         }
 
-        System.out.println(ingredients);
-        System.out.println(measures);
+
 
     }
 
@@ -152,6 +152,7 @@ public class ShowCocktailActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 System.out.println("Error fetching photo from url");
+                Toast.makeText(getApplicationContext(),"Could not load image :(", Toast.LENGTH_LONG).show();
             }
         });
 

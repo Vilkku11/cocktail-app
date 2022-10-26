@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DrinkkiApplikaatio</string>
+    <string name="cocktail_app">DrinkkiApplikaatio</string>
+    <string name="random_cocktail">Satunnainen Drinkki</string>
+    <string name="how_to_make">" Kuinka tehdä:"</string>
+    <string name="ingredients">Ainesosat:</string>
+    <string name="measure">Määrä:</string>
+    <string name="error">Virhe!</string>
+</resources>
