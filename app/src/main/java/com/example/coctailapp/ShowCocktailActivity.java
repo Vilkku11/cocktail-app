@@ -21,6 +21,7 @@ import org.json.JSONObject;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class ShowCocktailActivity extends AppCompatActivity {
 
@@ -30,6 +31,10 @@ public class ShowCocktailActivity extends AppCompatActivity {
     private String drinkGlass;
     private String drinkPhotoUrl;
     private String drinkInstructions;
+
+    private ArrayList<String> ingredients = new ArrayList<String>();
+    private ArrayList<String> measures = new ArrayList<String>();
+
 
     private ImageView cocktailView;
 
@@ -66,8 +71,10 @@ public class ShowCocktailActivity extends AppCompatActivity {
     private void fetchAndParseData() {
 
         JSONArray cocktailArray = null;
+        String ingredient;
+        String measure;
 
-        // Fetch data from Main Activity, convert it back to JSON object, to JSON array and extract data to variables
+        // Fetch data from Main Activity, convert it back to JSON object, to JSON array and extract data
         if (getIntent().getStringExtra("DATA") != null) {
              String dataa = getIntent().getStringExtra("DATA");
             System.out.println("data not null");
@@ -76,9 +83,11 @@ public class ShowCocktailActivity extends AppCompatActivity {
             try {
                JSONObject cocktail = new JSONObject(dataa);
                 cocktailArray = cocktail.getJSONArray("drinks");
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
 
 
             for (int i = 0; i < cocktailArray.length(); i++) {
@@ -88,6 +97,20 @@ public class ShowCocktailActivity extends AppCompatActivity {
                     drinkGlass = oneObject.getString("strGlass");
                     drinkInstructions = oneObject.getString("strInstructions");
                     drinkPhotoUrl = oneObject.getString("strDrinkThumb");
+
+                    for(int j = 1; j < 16; j++){
+                        oneObject = cocktailArray.getJSONObject(i);
+                         ingredient = oneObject.getString("strIngredient" + j);
+                         measure = oneObject.getString("strMeasure" + j);
+
+                        if(ingredient != "null"){
+                            ingredients.add(ingredient);
+                        }
+
+                        if(measure != "null"){
+                            measures.add(measure);
+                        }
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -97,6 +120,9 @@ public class ShowCocktailActivity extends AppCompatActivity {
         } else {
             System.out.println("data is null");
         }
+
+        System.out.println(ingredients);
+        System.out.println(measures);
 
     }
 
