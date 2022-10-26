@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -52,7 +53,8 @@ public class ShowCocktailActivity extends AppCompatActivity {
         // fetch views
         TextView cocktailName = (TextView) findViewById(R.id.cocktailNameTextView);
         TextView cocktailInstructions = (TextView) findViewById(R.id.cocktailInstructionsTextView);
-
+        TextView cocktailIngredients = (TextView) findViewById(R.id.cocktailIngredientsTextView);
+        TextView cocktailMeasures = (TextView) findViewById(R.id.cocktailMeasuresTextView);
         cocktailView = (ImageView) findViewById(R.id.cocktailPhotoImageView);
 
 
@@ -63,6 +65,18 @@ public class ShowCocktailActivity extends AppCompatActivity {
         // Set texts
         cocktailName.setText(drinkName);
         cocktailInstructions.setText(drinkInstructions);
+
+            // Set text for ingredients and measures
+        String ingredientsListString = "";
+        String measuresListString = "";
+        for(String s : ingredients){
+            ingredientsListString += s + "\n";
+        }
+        for(String s : measures){
+            measuresListString += s + "\n";
+        }
+        cocktailIngredients.setText(ingredientsListString);
+        cocktailMeasures.setText(measuresListString);
 
 
 
