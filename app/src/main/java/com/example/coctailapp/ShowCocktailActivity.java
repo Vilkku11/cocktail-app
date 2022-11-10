@@ -45,6 +45,12 @@ public class ShowCocktailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_cocktail);
 
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
+
         // Fetch data from MainActivity and parse it to needed variables
         fetchAndParseData();
 
