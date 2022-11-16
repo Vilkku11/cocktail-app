@@ -77,7 +77,9 @@
                 android:singleLine="false"
                 android:text="@string/error"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="16sp"/>
 
             <TextView
                 android:id="@+id/cocktailMeasuresTextView"
@@ -86,7 +88,9 @@
                 android:singleLine="false"
                 android:text="@string/error"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="16sp"/>
         </LinearLayout>
 
         <TextView
@@ -104,7 +108,9 @@
             android:layout_height="239dp"
             android:text="@string/error"
             android:textAlignment="center"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="16sp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

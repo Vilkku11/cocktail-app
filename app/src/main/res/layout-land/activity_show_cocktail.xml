@@ -21,10 +21,10 @@
 
     <ImageView
         android:id="@+id/cocktailPhotoImageView"
-        android:layout_width="164dp"
-        android:layout_height="101dp"
+        android:layout_width="135dp"
+        android:layout_height="88dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:background="#FFFFFF"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -81,7 +81,9 @@
                 android:singleLine="false"
                 android:text="@string/error"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="16sp"/>
 
             <TextView
                 android:id="@+id/cocktailMeasuresTextView"
@@ -90,7 +92,9 @@
                 android:singleLine="false"
                 android:text="@string/error"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="16sp"/>
         </LinearLayout>
 
         <TextView
@@ -105,10 +109,12 @@
         <TextView
             android:id="@+id/cocktailInstructionsTextView"
             android:layout_width="match_parent"
-            android:layout_height="239dp"
+            android:layout_height="match_parent"
+            android:autoSizeTextType="uniform"
             android:text="@string/error"
             android:textAlignment="center"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:autoSizeMaxTextSize="16sp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
